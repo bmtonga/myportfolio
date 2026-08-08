@@ -1,3 +1,4 @@
+import "./Testimonials.css";
 import { Heading } from "./Shared.jsx";
 export default function Testimonials() {
   return (

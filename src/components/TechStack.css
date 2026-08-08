@@ -1,0 +1,74 @@
+.tech {
+    padding-bottom: 0 !important
+}
+
+.tech>h2 {
+    margin-bottom: 60px
+}
+
+.ticker {
+    overflow: hidden;
+    margin: 0 -8vw;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line)
+}
+
+.ticker>div {
+    display: flex;
+    width: max-content;
+    animation: move 28s linear infinite
+}
+
+.ticker span {
+    white-space: nowrap;
+    padding: 24px 0;
+    font: 600 clamp(34px, 4.5vw, 66px) var(--display);
+    letter-spacing: -.08em
+}
+
+.ticker b {
+    color: var(--green);
+    font-size: .4em;
+    vertical-align: middle;
+    margin: 0 25px
+}
+
+@keyframes move {
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+.groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 55px 0
+}
+
+.groups p {
+    border-left: 1px solid var(--line);
+    padding-left: 18px;
+    color: #b8c2b9;
+    font-size: 13px;
+    line-height: 1.9;
+    margin: 0
+}
+
+.groups b {
+    display: block;
+    color: var(--green);
+    font: 10px var(--mono);
+    margin-bottom: 12px
+}
+
+@media(max-width:760px) {
+    .ticker {
+        margin: 0 -6vw
+    }
+
+    .groups {
+        grid-template-columns: 1fr;
+        gap: 28px
+    }
+}

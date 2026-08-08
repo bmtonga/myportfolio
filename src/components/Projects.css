@@ -1,0 +1,111 @@
+.projects {
+    margin-top: 65px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--line)
+}
+
+.project {
+    min-height: 480px;
+    padding: 18px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    transition: background .3s ease, transform .3s cubic-bezier(.2,.8,.2,1)
+}
+
+.project:hover {
+    background: #111914;
+    transform: translateY(-5px)
+}
+
+.project .visual {
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), filter .45s ease
+}
+
+.project:hover .visual {
+    transform: scale(.975);
+    filter: saturate(1.2) brightness(1.1)
+}
+
+.project:nth-child(even) {
+    border-right: 0
+}
+
+.visual {
+    height: 195px;
+    margin-bottom: 23px;
+    display: grid;
+    place-items: center;
+    font-size: 70px;
+    color: var(--green);
+    background: repeating-linear-gradient(135deg, #182a1d 0 1px, transparent 1px 13px), #243d2b
+}
+
+.v1 {
+    background: radial-gradient(circle, #83e2a0 0 3%, #2e523a 4% 26%, #0d130f 27%)
+}
+
+.v2 {
+    background: linear-gradient(135deg, #7b9b80, #223d2c, #b8f4a7)
+}
+
+.v3 {
+    background: linear-gradient(135deg, #21315e, #263b28, #bddd7e)
+}
+
+.v4 {
+    background: linear-gradient(135deg, #e5ecd8, #315847, #1a2024)
+}
+
+.v5 {
+    background: linear-gradient(130deg, #dee8d8, #3a754e, #13241a)
+}
+
+.project h3 {
+    font: 500 30px var(--display);
+    letter-spacing: -.06em;
+    margin: 9px 0
+}
+
+.project p {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0
+}
+
+.project>a {
+    font: 11px var(--mono);
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--green)
+}
+
+.project>a:hover {
+    color: var(--green);
+    transform: translateY(-3px);
+    border-bottom-color: var(--text)
+}
+
+.project>a:hover .arrow {
+    display: inline-block;
+    transform: translate(3px, -3px)
+}
+
+.tags {
+    display: block;
+    margin: 16px 0;
+    color: #cbd3cc;
+    font: 10px var(--mono)
+}
+
+@media(max-width:760px) {
+    .projects {
+        grid-template-columns: 1fr
+    }
+
+    .project,
+    .project:nth-child(even) {
+        border-right: 0;
+        min-height: auto
+    }
+}

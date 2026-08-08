@@ -1,3 +1,4 @@
+import "./Projects.css";
 import { Arrow, Heading } from "./Shared.jsx";
 const projects = [
   [

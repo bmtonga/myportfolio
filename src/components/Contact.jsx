@@ -1,3 +1,4 @@
+import "./Contact.css";
 import { Arrow } from "./Shared.jsx";
 export default function Contact() {
   return (

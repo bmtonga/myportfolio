@@ -1,0 +1,54 @@
+.contact {
+    max-width: 1440px;
+    margin: auto;
+    padding: 9vw 8vw 25px;
+    border-top: 1px solid var(--line)
+}
+
+.contact h2 {
+    font: 500 clamp(36px, 5vw, 74px)/1 var(--display);
+    letter-spacing: -.075em;
+    margin: 18px 0 50px
+}
+
+.contact h2 em {
+    font-style: normal;
+    color: #aab4ac
+}
+
+.mail {
+    font-size: clamp(16px, 2vw, 26px)
+}
+
+.mail:hover {
+    color: var(--green);
+    transform: translateY(-3px);
+    border-bottom-color: var(--text)
+}
+
+.mail:hover .arrow {
+    display: inline-block;
+    transform: translate(3px, -3px)
+}
+
+.bottom {
+    margin-top: 130px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    color: #9aa59d;
+    font: 10px var(--mono)
+}
+
+.bottom a:hover {
+    color: var(--green)
+}
+
+@media(max-width:760px) {
+    .bottom {
+        margin-top: 80px;
+        flex-direction: column;
+        gap: 18px
+    }
+}

@@ -1,3 +1,4 @@
+import "./Hero.css";
 import { Arrow } from "./Shared.jsx";
 export default function Hero() {
   return (

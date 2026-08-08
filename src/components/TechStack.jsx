@@ -1,3 +1,5 @@
+import "./TechStack.css";
+
 const tools = [
   "React",
   "JavaScript",
