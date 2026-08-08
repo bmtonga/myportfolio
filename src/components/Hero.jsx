@@ -4,10 +4,6 @@ export default function Hero() {
   return (
     <section className="hero" id="top">
       <div>
-
-        <p className="pre">
-          I'M BERNARD MTONGA 
-        </p>
         <h1>
           JUNIOR
           <br />
