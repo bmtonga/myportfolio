@@ -33,7 +33,7 @@
 }
 
 .pre em {
-    color: #9ca79e;
+    color: var(--muted-alt);
     font-style: normal
 }
 
@@ -49,7 +49,7 @@ h1 b {
 
 .lead {
     max-width: 500px;
-    color: #b8c1b9;
+    color: var(--subtle);
     line-height: 1.65;
     font-size: 15px;
     margin: 36px 0

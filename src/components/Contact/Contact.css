@@ -13,7 +13,7 @@
 
 .contact h2 em {
     font-style: normal;
-    color: #aab4ac
+    color: var(--muted)
 }
 
 .mail {
@@ -35,7 +35,7 @@
     border-top: 1px solid var(--line);
     display: flex;
     justify-content: space-between;
-    color: #9aa59d;
+    color: var(--muted-alt);
     font: 10px var(--mono)
 }
 

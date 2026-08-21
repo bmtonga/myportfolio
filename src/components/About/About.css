@@ -6,7 +6,7 @@
 
 .about>div:last-child {
     padding-top: 25px;
-    color: #c2cbc3;
+    color: var(--faint);
     font-size: 16px;
     line-height: 1.65
 }

@@ -1,5 +1,6 @@
 import "./Header.css";
 import { useState, useEffect } from "react";
+import ThemeToggle from "../ThemeToggle/ThemeToggle.jsx";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -83,18 +84,23 @@ export default function Header() {
         Bernard K. Mtonga <span>_</span>
       </a>
 
-      {/* Hamburger Toggle Button for Mobile */}
-      <button
-        className={`hamburger-btn ${open ? "is-active" : ""}`}
-        onClick={() => setOpen(!open)}
-        aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-        aria-expanded={open}
-        aria-controls="mobile-navigation"
-      >
-        <span className="hamburger-box">
-          <span className="hamburger-inner"></span>
-        </span>
-      </button>
+      {/* Right-side controls: theme toggle + hamburger */}
+      <div className="header-controls">
+        <ThemeToggle />
+
+        {/* Hamburger Toggle Button for Mobile */}
+        <button
+          className={`hamburger-btn ${open ? "is-active" : ""}`}
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+        >
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
 
       {/* Backdrop for closing mobile menu on click outside */}
       {open && <div className="nav-backdrop" onClick={() => setOpen(false)} />}

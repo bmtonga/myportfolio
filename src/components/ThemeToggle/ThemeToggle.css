@@ -1,0 +1,106 @@
+/* ================================================
+   THEME TOGGLE — pill track with sliding thumb
+   ================================================ */
+.theme-toggle {
+    /* Reset */
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    /* Layout */
+    display: flex;
+    align-items: center;
+    z-index: 101;
+    flex-shrink: 0;
+}
+
+.theme-toggle:focus-visible .theme-toggle__track {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+}
+
+/* Pill track */
+.theme-toggle__track {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    border-radius: 999px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    transition: background 0.35s ease, border-color 0.35s ease;
+    overflow: hidden;
+}
+
+.theme-toggle.is-light .theme-toggle__track {
+    background: var(--green);
+    border-color: var(--green);
+}
+
+/* Sliding thumb */
+.theme-toggle__thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                background-color 0.35s ease;
+    will-change: transform;
+}
+
+.theme-toggle.is-light .theme-toggle__thumb {
+    transform: translateX(24px);
+    background: #fff;
+}
+
+/* Icons inside the thumb */
+.theme-toggle__thumb svg {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Dark mode: show moon, hide sun */
+.theme-toggle.is-dark .icon-moon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    color: var(--bg);
+}
+
+.theme-toggle.is-dark .icon-sun {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+}
+
+/* Light mode: show sun, hide moon */
+.theme-toggle.is-light .icon-sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    color: var(--green);
+}
+
+.theme-toggle.is-light .icon-moon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+/* Hover glow */
+.theme-toggle:hover .theme-toggle__track {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--green) 20%, transparent);
+}
+
+/* Reduced-motion: skip animation but keep function */
+@media (prefers-reduced-motion: reduce) {
+    .theme-toggle__thumb,
+    .theme-toggle__thumb svg,
+    .theme-toggle__track {
+        transition: none !important;
+    }
+}

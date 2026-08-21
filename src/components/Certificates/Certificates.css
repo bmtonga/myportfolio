@@ -10,11 +10,10 @@
     padding: 30px 0;
     transition: background .25s ease, padding .25s ease
 }
-
 .cert:hover {
-    background: #111914;
+    background: var(--bg-elevated);
     padding-left: 14px;
-    padding-right: 14px
+    padding-right: 14px;
 }
 
 .cert>b {
@@ -32,7 +31,7 @@
     align-items: start;
     gap: 9px;
     font: 11px var(--mono);
-    color: #c5cec5
+    color: var(--muted-alt);
 }
 
 .cert aside a {

@@ -8,7 +8,7 @@ header.header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(11, 15, 13, 0.95);
+    background: var(--header-bg);
     backdrop-filter: blur(12px);
 }
 
@@ -34,6 +34,28 @@ header.header {
     border-radius: 4px;
     transition: background-color 0.2s ease;
 }
+
+/* Right-side header controls wrapper (theme toggle + hamburger) */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 101;
+}
+
+/* On desktop the hamburger is hidden but the theme toggle stays visible */
+@media (min-width: 761px) {
+    .header-controls {
+        /* toggle sits between logo and nav on desktop */
+        order: 2;
+        margin-left: 20px;
+    }
+
+    .nav-menu {
+        order: 1;
+    }
+}
+
 
 .hamburger-btn:focus-visible {
     outline: 2px solid var(--green);
@@ -147,7 +169,7 @@ header.header {
         top: 64px;
         left: 0;
         right: 0;
-        background: rgba(11, 15, 13, 0.98);
+        background: var(--mobile-menu-bg);
         backdrop-filter: blur(16px);
         z-index: 99;
         flex-direction: column;

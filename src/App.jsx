@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { ThemeProvider } from "./context/ThemeContext.jsx";
 import Header from "./components/Header/Header.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 import About from "./components/About/About.jsx";
@@ -35,7 +37,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ThemeProvider>
       <Header />
       <main>
         <Hero />
@@ -46,8 +48,7 @@ function App() {
         <Testimonials />
       </main>
       <Contact />
-    </>
+    </ThemeProvider>
   );
 }
 export default App;
-import { useEffect } from "react";

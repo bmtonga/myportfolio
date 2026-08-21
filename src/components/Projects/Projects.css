@@ -14,7 +14,7 @@
 }
 
 .project:hover {
-    background: #111914;
+    background: var(--bg-elevated);
     transform: translateY(-5px)
 }
 
@@ -90,7 +90,7 @@
 .tags {
     display: block;
     margin: 16px 0;
-    color: #cbd3cc;
+    color: var(--subtle);
     font: 10px var(--mono)
 }
 

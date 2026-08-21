@@ -19,7 +19,7 @@
 }
 
 .testimonials footer span {
-    color: #9ba69d
+    color: var(--muted-alt);
 }
 
 @media(max-width:760px) {
