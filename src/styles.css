@@ -222,7 +222,7 @@ section>h2 {
 ::-webkit-scrollbar-thumb {
     background: var(--line);
     border-radius: 3px;
-    transition: background 0.2s ease;
+    transition: background 0.25s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
