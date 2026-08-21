@@ -25,7 +25,13 @@ header button {
     background: none;
     border: 0;
     color: white;
-    font: 11px var(--mono)
+    font: 11px var(--mono);
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+header button:hover {
+    color: var(--green);
 }
 
 nav {

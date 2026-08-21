@@ -43,18 +43,14 @@
 .cert a {
     font: 11px var(--mono);
     padding-bottom: 7px;
-    border-bottom: 1px solid var(--green)
+    border-bottom: 1px solid var(--green);
+    display: inline-block;
 }
 
 .cert a:hover {
     color: var(--green);
     transform: translateY(-3px);
-    border-bottom-color: var(--text)
-}
-
-.cert a:hover .arrow {
-    display: inline-block;
-    transform: translate(3px, -3px)
+    border-bottom-color: var(--text);
 }
 
 @media(max-width:760px) {

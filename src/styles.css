@@ -66,7 +66,14 @@ main > section.is-visible,
 .links a {
     font: 11px var(--mono);
     padding-bottom: 7px;
-    border-bottom: 1px solid var(--green)
+    border-bottom: 1px solid var(--green);
+    display: inline-block;
+}
+
+.links a:hover {
+    color: var(--green);
+    transform: translateY(-3px);
+    border-bottom-color: var(--text);
 }
 
 nav a:hover {
@@ -75,7 +82,13 @@ nav a:hover {
 
 .arrow {
     font: 18px var(--display);
-    vertical-align: -2px
+    vertical-align: -2px;
+    display: inline-block;
+    transition: transform .2s ease;
+}
+
+a:hover .arrow {
+    transform: translate(3px, -3px);
 }
 
 
