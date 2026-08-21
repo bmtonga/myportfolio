@@ -12,9 +12,9 @@ export default function Hero() {
           <b>DEVELOPER.</b>
         </h1>
         <p className="lead">
-         Full Stack Software Engineer building scalable, 
-         data-driven software for real-world impact.
-          Focused on global challenges at the intersection of tech, 
+          Building scalable,
+          data-driven software for real-world impact.
+          Focused on global challenges at the intersection of tech,
           education, and development.
         </p>
         <div className="links">
