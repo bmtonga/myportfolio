@@ -1,5 +1,5 @@
 import "./Contact.css";
-import { Arrow } from "./Shared.jsx";
+import { Arrow } from "../Shared/Shared.jsx";
 export default function Contact() {
   return (
     <footer id="contact" className="contact">

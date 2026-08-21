@@ -1,5 +1,5 @@
 import "./Hero.css";
-import { Arrow } from "./Shared.jsx";
+import { Arrow } from "../Shared/Shared.jsx";
 export default function Hero() {
   return (
     <section className="hero" id="top">

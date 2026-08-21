@@ -1,5 +1,5 @@
 import "./About.css";
-import { Arrow, Heading } from "./Shared.jsx";
+import { Arrow, Heading } from "../Shared/Shared.jsx";
 
 export default function About() {
   return (

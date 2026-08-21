@@ -1,5 +1,5 @@
 import "./Certificates.css";
-import { Arrow, Heading } from './Shared.jsx';
+import { Arrow, Heading } from "../Shared/Shared.jsx";
 
 const certificates = [
   {

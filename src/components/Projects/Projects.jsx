@@ -1,5 +1,5 @@
 import "./Projects.css";
-import { Arrow, Heading } from "./Shared.jsx";
+import { Arrow, Heading } from "../Shared/Shared.jsx";
 const projects = [
   [
     "Portflect",

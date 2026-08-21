@@ -1,11 +1,11 @@
-import Header from "./components/Header.jsx";
-import Hero from "./components/Hero.jsx";
-import About from "./components/About.jsx";
-import TechStack from "./components/TechStack.jsx";
-import Projects from "./components/Projects.jsx";
-import Certificates from "./components/Certificates.jsx";
-import Testimonials from "./components/Testimonials.jsx";
-import Contact from "./components/Contact.jsx";
+import Header from "./components/Header/Header.jsx";
+import Hero from "./components/Hero/Hero.jsx";
+import About from "./components/About/About.jsx";
+import TechStack from "./components/TechStack/TechStack.jsx";
+import Projects from "./components/Projects/Projects.jsx";
+import Certificates from "./components/Certificates/Certificates.jsx";
+import Testimonials from "./components/Testimonials/Testimonials.jsx";
+import Contact from "./components/Contact/Contact.jsx";
 
 function App() {
   useEffect(() => {

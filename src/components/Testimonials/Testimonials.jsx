@@ -1,5 +1,5 @@
 import "./Testimonials.css";
-import { Heading } from "./Shared.jsx";
+import { Heading } from "../Shared/Shared.jsx";
 export default function Testimonials() {
   return (
     <section className="testimonials">
