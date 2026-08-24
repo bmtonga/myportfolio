@@ -1,124 +1,115 @@
-.projects {
-    margin-top: 65px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--line)
-}
-
-.project-tools {
+.project-intro {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
-    gap: 20px;
+    gap: 24px;
     margin-top: 32px;
     color: var(--muted-alt);
     font: 10px var(--mono)
 }
 
-.project-filters {
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-    justify-content: flex-end
+.project-intro p {
+    margin: 0;
+    font: 11px var(--mono)
 }
 
-.project-filters button,
-.close-inspector {
-    padding: 0 0 6px;
-    border: 0;
-    border-bottom: 1px solid transparent;
-    background: transparent;
-    color: var(--muted-alt);
-    cursor: pointer;
-    font: 10px var(--mono)
-}
-
-.project-filters button:hover,
-.project-filters button.active {
-    color: var(--green);
-    border-bottom-color: var(--green)
+.projects {
+    margin-top: 20px;
+    border: 1px solid var(--line)
 }
 
 .project {
-    min-height: 480px;
-    padding: 18px;
-    border-right: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
     transition: background .3s ease, transform .3s cubic-bezier(.2,.8,.2,1)
 }
 
 .project:hover {
-    background: var(--bg-elevated);
-    transform: translateY(-5px)
+    background: var(--bg-elevated)
 }
 
-.project .visual {
+.featured-project {
+    min-height: 390px;
+    padding: 18px;
+    display: grid;
+    grid-template-columns: minmax(220px, .9fr) minmax(0, 1.1fr);
+    gap: clamp(25px, 5vw, 76px);
+    align-items: center
+}
+
+.visual {
+    min-height: 280px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 22px;
+    color: var(--green);
+    background: repeating-linear-gradient(135deg, #182a1d 0 1px, transparent 1px 13px), #243d2b;
     transition: transform .45s cubic-bezier(.2,.8,.2,1), filter .45s ease
 }
 
 .project:hover .visual {
-    transform: scale(.975);
-    filter: saturate(1.2) brightness(1.1)
+    transform: scale(.98);
+    filter: saturate(1.18) brightness(1.08)
 }
 
-.project:nth-child(even) {
-    border-right: 0
+.capstone-visual {
+    background: radial-gradient(circle at 74% 25%, #83e2a0 0 2%, transparent 2.5%), radial-gradient(circle at 74% 25%, #2e523a 0 19%, transparent 19.5%), repeating-linear-gradient(135deg, #182a1d 0 1px, transparent 1px 13px), #111c14
 }
 
-.visual {
-    height: 195px;
-    margin-bottom: 23px;
-    display: grid;
-    place-items: center;
-    font-size: 70px;
-    color: var(--green);
-    background: repeating-linear-gradient(135deg, #182a1d 0 1px, transparent 1px 13px), #243d2b
+.capstone-visual span {
+    font: 600 clamp(40px, 7vw, 80px) var(--display);
+    letter-spacing: -.09em
 }
 
-.v1 {
-    background: radial-gradient(circle, #83e2a0 0 3%, #2e523a 4% 26%, #0d130f 27%)
+.capstone-visual i {
+    align-self: flex-start;
+    font: 12px var(--mono);
+    font-style: normal
 }
 
-.v2 {
-    background: linear-gradient(135deg, #7b9b80, #223d2c, #b8f4a7)
+.project h3,
+.building-section h3 {
+    font: 500 clamp(32px, 4vw, 48px) var(--display);
+    letter-spacing: -.065em;
+    margin: 10px 0 14px
 }
 
-.v3 {
-    background: linear-gradient(135deg, #21315e, #263b28, #bddd7e)
-}
-
-.v4 {
-    background: linear-gradient(135deg, #e5ecd8, #315847, #1a2024)
-}
-
-.v5 {
-    background: linear-gradient(130deg, #dee8d8, #3a754e, #13241a)
-}
-
-.project h3 {
-    font: 500 30px var(--display);
-    letter-spacing: -.06em;
-    margin: 9px 0
-}
-
-.project p {
-    font-size: 13px;
-    line-height: 1.55;
+.project p,
+.building-section p {
+    max-width: 550px;
+    font-size: 14px;
+    line-height: 1.65;
     color: var(--muted);
     margin: 0
 }
 
-.project>a {
-    font: 11px var(--mono);
-    padding-bottom: 7px;
-    border-bottom: 1px solid var(--green);
-    display: inline-block;
+.project-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0;
+    margin: 22px 0 0;
+    list-style: none
 }
 
-.project>a:hover {
+.project-highlights li {
+    min-height: 52px;
+    padding: 10px;
+    border-left: 1px solid var(--green);
+    color: var(--muted-alt);
+    font: 10px/1.45 var(--mono)
+}
+
+.project small,
+.building-section small {
     color: var(--green);
-    transform: translateY(-3px);
-    border-bottom-color: var(--text);
+    font: 10px var(--mono)
+}
+
+.tags {
+    display: block;
+    margin: 20px 0;
+    color: var(--subtle);
+    font: 10px var(--mono)
 }
 
 .inspect-project {
@@ -136,11 +127,27 @@
     transform: translateY(-3px)
 }
 
-.tags {
-    display: block;
-    margin: 16px 0;
-    color: var(--subtle);
-    font: 10px var(--mono)
+.building-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) auto;
+    align-items: end;
+    gap: 35px;
+    margin-top: 22px;
+    padding: 28px;
+    border: 1px dashed var(--line);
+    background: linear-gradient(135deg, rgba(131, 226, 160, .05), transparent 45%)
+}
+
+.building-section h3 {
+    font-size: clamp(27px, 3.5vw, 38px)
+}
+
+.building-actions {
+    min-width: 200px
+}
+
+.building-actions .tags {
+    margin-top: 0
 }
 
 .stack-inspector {
@@ -186,7 +193,13 @@
 }
 
 .close-inspector {
-    color: var(--text)
+    padding: 0 0 6px;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    font: 10px var(--mono)
 }
 
 .close-inspector:hover {
@@ -195,24 +208,33 @@
 }
 
 @media(max-width:760px) {
-    .project-tools {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 14px
-    }
-
-    .project-filters {
-        justify-content: flex-start
-    }
-
-    .projects {
+    .project-intro,
+    .featured-project,
+    .building-section {
         grid-template-columns: 1fr
     }
 
-    .project,
-    .project:nth-child(even) {
-        border-right: 0;
-        min-height: auto
+    .project-intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px
+    }
+
+    .featured-project {
+        gap: 28px
+    }
+
+    .visual {
+        min-height: 190px
+    }
+
+    .project-highlights {
+        grid-template-columns: 1fr
+    }
+
+    .building-section {
+        align-items: start;
+        padding: 22px
     }
 
     .stack-inspector {
@@ -233,5 +255,9 @@
 
     .close-inspector {
         justify-self: start
+    }
+
+    .stack-layers {
+        grid-template-columns: 1fr
     }
 }
