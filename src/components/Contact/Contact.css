@@ -34,19 +34,49 @@
     padding-top: 20px;
     border-top: 1px solid var(--line);
     display: flex;
+    align-items: center;
     justify-content: space-between;
     color: var(--muted-alt);
-    font: 10px var(--mono)
+    font: 11px var(--mono);
+    letter-spacing: .01em
 }
 
 .bottom a:hover {
     color: var(--green)
 }
 
+.copyright {
+    white-space: nowrap
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 11px
+}
+
+.footer-links span {
+    color: var(--green)
+}
+
+.footer-links a {
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent
+}
+
+.footer-links a:hover {
+    border-bottom-color: var(--green)
+}
+
 @media(max-width:760px) {
+    .contact {
+        padding-inline: 6vw
+    }
+
     .bottom {
         margin-top: 80px;
         flex-direction: column;
-        gap: 18px
+        align-items: flex-start;
+        gap: 16px
     }
 }

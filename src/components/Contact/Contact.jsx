@@ -16,20 +16,20 @@ export default function Contact() {
         bernard.mtonga@zwacha.co.zm <Arrow />
       </a>
       <div className="bottom">
-        <span>© 2026 BERNARD K. MTONGA</span>
-        <span>
+        <span className="copyright">© 2026 BERNARD K. MTONGA</span>
+        <nav className="footer-links" aria-label="Social profiles">
           <a
             href="https://www.linkedin.com/in/bernard-k-mtonga-3760292b1"
             target="_blank"
             rel="noreferrer"
           >
             LINKEDIN
-          </a>{" "}
-          ·{" "}
+          </a>
+          <span aria-hidden="true">·</span>
           <a href="https://github.com/bmtonga" target="_blank" rel="noreferrer">
             GITHUB
           </a>
-        </span>
+        </nav>
       </div>
     </footer>
   );

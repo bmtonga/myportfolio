@@ -8,9 +8,16 @@ import Projects from "./components/Projects/Projects.jsx";
 import Certificates from "./components/Certificates/Certificates.jsx";
 import Testimonials from "./components/Testimonials/Testimonials.jsx";
 import Contact from "./components/Contact/Contact.jsx";
+import CaseStudy from "./components/CaseStudy/CaseStudy.jsx";
 
 function App() {
+  const isIbmCaseStudy =
+    window.location.pathname.replace(/\/+$/, "") ===
+    "/case-studies/ibm-car-dealership";
+
   useEffect(() => {
+    if (isIbmCaseStudy) return undefined;
+
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
@@ -35,6 +42,14 @@ function App() {
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
+
+  if (isIbmCaseStudy) {
+    return (
+      <ThemeProvider>
+        <CaseStudy />
+      </ThemeProvider>
+    );
+  }
 
   return (
     <ThemeProvider>

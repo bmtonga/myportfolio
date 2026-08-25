@@ -68,6 +68,12 @@ export default function Projects() {
               <li>Positive, neutral, and negative sentiment results</li>
             </ul>
             <span className="tags">{featuredProject.tags}</span>
+            <a
+              className="case-study-link"
+              href="/case-studies/ibm-car-dealership"
+            >
+              VIEW CASE STUDY <Arrow />
+            </a>
             <button
               className="inspect-project"
               type="button"
@@ -81,7 +87,7 @@ export default function Projects() {
 
       <div className="building-section">
         <div>
-          <small>CURRENTLY BUILDING</small>
+          <small className="building-status">CURRENTLY BUILDING</small>
           <h3>{inProgressProject.name}</h3>
           <p>{inProgressProject.description}</p>
         </div>

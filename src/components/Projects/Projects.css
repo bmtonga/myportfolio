@@ -122,6 +122,20 @@
     font: 11px var(--mono)
 }
 
+.case-study-link {
+    display: inline-block;
+    margin-right: 20px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--green);
+    color: var(--text);
+    font: 11px var(--mono)
+}
+
+.case-study-link:hover {
+    color: var(--green);
+    transform: translateY(-3px)
+}
+
 .inspect-project:hover {
     color: var(--green);
     transform: translateY(-3px)
@@ -140,6 +154,27 @@
 
 .building-section h3 {
     font-size: clamp(27px, 3.5vw, 38px)
+}
+
+.building-status {
+    display: inline-block;
+    animation: building-status-glow 2.8s ease-in-out infinite;
+    text-shadow: 0 0 0 transparent
+}
+
+@keyframes building-status-glow {
+    0%,
+    100% {
+        color: var(--green);
+        text-shadow: 0 0 0 transparent;
+        opacity: .72
+    }
+
+    50% {
+        color: #b9ffcb;
+        text-shadow: 0 0 7px rgba(131, 226, 160, .85), 0 0 18px rgba(131, 226, 160, .4);
+        opacity: 1
+    }
 }
 
 .building-actions {
@@ -259,5 +294,12 @@
 
     .stack-layers {
         grid-template-columns: 1fr
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .building-status {
+        animation: none;
+        opacity: 1
     }
 }
