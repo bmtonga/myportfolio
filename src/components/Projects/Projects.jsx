@@ -5,8 +5,8 @@ import { Arrow, Heading } from "../Shared/Shared.jsx";
 const featuredProject = {
   name: "Car Dealership Review Portal",
   description:
-    "The final practical assessment for the IBM Full Stack Software Developer Professional Certificate: a cloud-native portal where customers find local dealerships, read and submit reviews, and see AI-powered sentiment analysis on feedback.",
-  tags: "Django • React • Node.js • Express • MongoDB • Docker • Kubernetes",
+    "A full-stack portal for finding dealerships, reading reviews, submitting feedback, and viewing sentiment analysis.",
+  tags: "Django • React • Express • MongoDB • Docker",
   layers: [
     "Django, React, Bootstrap, and authentication",
     "Express and MongoDB dealership/review microservice",
@@ -84,28 +84,39 @@ export default function Projects() {
             <small>FEATURED / IBM CAPSTONE</small>
             <h3>{featuredProject.name}</h3>
             <p>{featuredProject.description}</p>
-            <ul className="project-highlights" aria-label="Project capabilities">
-              <li>Search dealerships by US state</li>
-              <li>Authenticated customer review submission</li>
-              <li>Positive, neutral, and negative sentiment results</li>
-            </ul>
+            <dl className="project-meta">
+              <div>
+                <dt>ROLE</dt>
+                <dd>Lead Developer, IBM Capstone</dd>
+              </div>
+              <div>
+                <dt>TYPE</dt>
+                <dd>IBM Capstone</dd>
+              </div>
+              <div>
+                <dt>STATUS</dt>
+                <dd>Completed</dd>
+              </div>
+            </dl>
             <span className="tags">{featuredProject.tags}</span>
-            <a
-              className="action-control primary case-study-link"
-              href="/case-studies/ibm-car-dealership"
-            >
-              VIEW CASE STUDY <Arrow />
-            </a>
-            <button
-              className="action-control secondary inspect-project"
-              type="button"
-              onClick={(event) => {
-                triggerRef.current = event.currentTarget;
-                setInspectedProject(featuredProject);
-              }}
-            >
-              EXPLORE THE STACK <Arrow />
-            </button>
+            <div className="project-actions">
+              <a
+                className="action-control primary case-study-link"
+                href="/case-studies/ibm-car-dealership"
+              >
+                VIEW CASE STUDY <Arrow />
+              </a>
+              <button
+                className="action-control secondary inspect-project"
+                type="button"
+                onClick={(event) => {
+                  triggerRef.current = event.currentTarget;
+                  setInspectedProject(featuredProject);
+                }}
+              >
+                EXPLORE THE STACK <Arrow />
+              </button>
+            </div>
           </div>
         </article>
       </div>

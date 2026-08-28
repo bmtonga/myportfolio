@@ -36,7 +36,8 @@
 }
 
 .visual {
-    min-height: 280px;
+    aspect-ratio: 4 / 3;
+    min-height: 0;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -82,6 +83,30 @@
     margin: 0
 }
 
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 22px 0 0;
+}
+
+.project-meta div {
+    min-width: 0;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+}
+
+.project-meta dt {
+    color: var(--green);
+    font: 10px var(--mono);
+}
+
+.project-meta dd {
+    margin: 7px 0 0;
+    color: var(--muted-alt);
+    font: 10px/1.45 var(--mono);
+}
+
 .project-highlights {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -110,6 +135,13 @@
     margin: 20px 0;
     color: var(--subtle);
     font: 10px var(--mono)
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
 }
 
 .inspect-project {
@@ -265,7 +297,18 @@
     }
 
     .visual {
-        min-height: 190px
+        aspect-ratio: 16 / 9;
+        min-height: 0;
+    }
+
+    .project-meta {
+        gap: 10px;
+    }
+
+    .project-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
     }
 
     .project-highlights {

@@ -40,8 +40,12 @@
 }
 
 .cert aside a {
-    color: var(--green);
+    color: var(--text);
     margin-top: auto
+}
+
+.cert aside a .arrow {
+    color: var(--green);
 }
 
 .cert a {
@@ -54,7 +58,7 @@
 .cert a:hover {
     color: var(--green);
     transform: translateY(-3px);
-    border-bottom-color: var(--text);
+    border-bottom-color: var(--green);
 }
 
 @media(max-width:760px) {

@@ -1,15 +1,41 @@
 import "./TechStack.css";
 
 const tools = [
-  "React",
-  "JavaScript",
+  "React.js",
+  "JavaScript (ES6+)",
+  "Python",
   "Node.js",
-  "Express.js",
-  "PostgreSQL",
+  "Django",
   "Docker",
   "Kubernetes",
-  "OpenShift",
+  "PostgreSQL",
+  "MongoDB",
+  "Git & GitHub",
 ];
+
+const toolGroups = [
+  {
+    label: "FRONTEND",
+    skills: "React.js • JavaScript (ES6+) • HTML5/CSS3 • Asynchronous JavaScript",
+  },
+  {
+    label: "BACKEND",
+    skills: "Python • Node.js • Django • Flask • Express.js • RESTful APIs",
+  },
+  {
+    label: "CLOUD & DEVOPS",
+    skills: "Docker • Kubernetes • IBM Cloud • Serverless",
+  },
+  {
+    label: "DATA & DATABASES",
+    skills: "PostgreSQL • SQL • MongoDB (NoSQL) • Django ORM",
+  },
+  {
+    label: "ENGINEERING PRACTICES",
+    skills: "Git & GitHub • Microservices Architecture • CI/CD • Generative AI Tools",
+  },
+];
+
 export default function TechStack() {
   return (
     <section className="tech">
@@ -25,18 +51,12 @@ export default function TechStack() {
         </div>
       </div>
       <div className="groups">
-        <p>
-          <b>FRONTEND</b>React · JavaScript · HTML5 · CSS3 · Material UI ·
-          Accessible Web Design
-        </p>
-        <p>
-          <b>BACKEND &amp; DATA</b>Node.js · Express.js · PostgreSQL ·
-          Microservices · Serverless
-        </p>
-        <p>
-          <b>DEVOPS &amp; TOOLS</b>Docker · Kubernetes · OpenShift · Git ·
-          GitHub
-        </p>
+        {toolGroups.map((group) => (
+          <p key={group.label}>
+            <b>{group.label}</b>
+            {group.skills}
+          </p>
+        ))}
       </div>
     </section>
   );

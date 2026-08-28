@@ -265,6 +265,10 @@ main.case-study-main > section.case-study-evidence {
     margin: 24px 0 0
 }
 
+.evidence-link {
+    margin-top: 28px;
+}
+
 .case-study-footer {
     min-height: 100px;
     color: var(--muted-alt);
