@@ -29,7 +29,7 @@ export default function CaseStudy() {
     <div className="case-study-page">
       <header className="case-study-header">
         <a className="case-study-brand" href="/">
-          Bernard K. Mtonga <span>_</span>
+          Bernard K. Mtonga
         </a>
         <div className="case-study-header-actions">
           <a className="action-control secondary back-link" href="/">

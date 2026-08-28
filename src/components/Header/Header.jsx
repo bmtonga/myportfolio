@@ -1,16 +1,20 @@
 import "./Header.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle.jsx";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [portraitOpen, setPortraitOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const portraitTriggerRef = useRef(null);
+  const portraitCloseRef = useRef(null);
 
   // Close mobile menu on Escape key press
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         setOpen(false);
+        setPortraitOpen(false);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -19,7 +23,7 @@ export default function Header() {
 
   // Lock background scroll when mobile menu is open
   useEffect(() => {
-    if (open) {
+    if (open || portraitOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -27,7 +31,18 @@ export default function Header() {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [open]);
+  }, [open, portraitOpen]);
+
+  useEffect(() => {
+    if (portraitOpen) {
+      portraitCloseRef.current?.focus();
+    }
+  }, [portraitOpen]);
+
+  const closePortrait = () => {
+    setPortraitOpen(false);
+    portraitTriggerRef.current?.focus();
+  };
 
   // Track active section as user scrolls
   useEffect(() => {
@@ -80,9 +95,22 @@ export default function Header() {
 
   return (
     <header className="header">
-      <a className="logo" href="#top" onClick={() => setActiveSection("")}>
-        Bernard K. Mtonga <span>_</span>
-      </a>
+      <div className="brand-group">
+        <button
+          className="profile-trigger"
+          type="button"
+          aria-label="View portrait of Bernard K. Mtonga"
+          onClick={(event) => {
+            portraitTriggerRef.current = event.currentTarget;
+            setPortraitOpen(true);
+          }}
+        >
+          <img src="/Assets/Images/profilepicture.webp" alt="" aria-hidden="true" />
+        </button>
+        <a className="logo" href="#top" onClick={() => setActiveSection("")}>
+          Bernard K. Mtonga
+        </a>
+      </div>
 
       {/* Right-side controls: theme toggle + hamburger */}
       <div className="header-controls">
@@ -123,6 +151,37 @@ export default function Header() {
           );
         })}
       </nav>
+
+      {portraitOpen && (
+        <div
+          className="portrait-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="portrait-modal-title"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) closePortrait();
+          }}
+        >
+          <div className="portrait-modal-content">
+            <div className="portrait-modal-heading">
+              <small id="portrait-modal-title">BERNARD K. MTONGA</small>
+              <button
+                ref={portraitCloseRef}
+                className="portrait-modal-close"
+                type="button"
+                onClick={closePortrait}
+                aria-label="Close portrait viewer"
+              >
+                CLOSE ×
+              </button>
+            </div>
+            <img
+              src="/Assets/Images/profilepicture.webp"
+              alt="Portrait of Bernard K. Mtonga"
+            />
+          </div>
+        </div>
+      )}
     </header>
   );
 }
