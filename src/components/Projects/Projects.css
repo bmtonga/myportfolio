@@ -107,23 +107,6 @@
     font: 10px/1.45 var(--mono);
 }
 
-.project-highlights {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-    padding: 0;
-    margin: 22px 0 0;
-    list-style: none
-}
-
-.project-highlights li {
-    min-height: 52px;
-    padding: 10px;
-    border-left: 1px solid var(--green);
-    color: var(--muted-alt);
-    font: 10px/1.45 var(--mono)
-}
-
 .project small,
 .building-section small {
     color: var(--green);
@@ -142,6 +125,7 @@
     flex-wrap: wrap;
     gap: 24px;
     align-items: center;
+    margin-top: 16px;
 }
 
 .inspect-project {
@@ -311,10 +295,6 @@
         gap: 12px;
     }
 
-    .project-highlights {
-        grid-template-columns: 1fr
-    }
-
     .building-section {
         align-items: start;
         padding: 22px
@@ -331,7 +311,11 @@
     }
 }
 
-@media(max-width:420px) {
+@media(max-width:480px) {
+    .project-meta {
+        grid-template-columns: 1fr;
+    }
+
     .stack-inspector {
         grid-template-columns: 1fr
     }

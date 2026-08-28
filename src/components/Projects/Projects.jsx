@@ -84,6 +84,7 @@ export default function Projects() {
             <small>FEATURED / IBM CAPSTONE</small>
             <h3>{featuredProject.name}</h3>
             <p>{featuredProject.description}</p>
+            <span className="tags">{featuredProject.tags}</span>
             <dl className="project-meta">
               <div>
                 <dt>ROLE</dt>
@@ -98,7 +99,6 @@ export default function Projects() {
                 <dd>Completed</dd>
               </div>
             </dl>
-            <span className="tags">{featuredProject.tags}</span>
             <div className="project-actions">
               <a
                 className="action-control primary case-study-link"
