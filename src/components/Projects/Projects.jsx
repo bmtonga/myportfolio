@@ -85,20 +85,6 @@ export default function Projects() {
             <h3>{featuredProject.name}</h3>
             <p>{featuredProject.description}</p>
             <span className="tags">{featuredProject.tags}</span>
-            <dl className="project-meta">
-              <div>
-                <dt>ROLE</dt>
-                <dd>Lead Developer, IBM Capstone</dd>
-              </div>
-              <div>
-                <dt>TYPE</dt>
-                <dd>IBM Capstone</dd>
-              </div>
-              <div>
-                <dt>STATUS</dt>
-                <dd>Completed</dd>
-              </div>
-            </dl>
             <div className="project-actions">
               <a
                 className="action-control primary case-study-link"
@@ -106,16 +92,6 @@ export default function Projects() {
               >
                 VIEW CASE STUDY <Arrow />
               </a>
-              <button
-                className="action-control secondary inspect-project"
-                type="button"
-                onClick={(event) => {
-                  triggerRef.current = event.currentTarget;
-                  setInspectedProject(featuredProject);
-                }}
-              >
-                EXPLORE THE STACK <Arrow />
-              </button>
             </div>
           </div>
         </article>

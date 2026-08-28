@@ -83,30 +83,6 @@
     margin: 0
 }
 
-.project-meta {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-    margin: 22px 0 0;
-}
-
-.project-meta div {
-    min-width: 0;
-    padding-top: 10px;
-    border-top: 1px solid var(--line);
-}
-
-.project-meta dt {
-    color: var(--green);
-    font: 10px var(--mono);
-}
-
-.project-meta dd {
-    margin: 7px 0 0;
-    color: var(--muted-alt);
-    font: 10px/1.45 var(--mono);
-}
-
 .project small,
 .building-section small {
     color: var(--green);
@@ -285,10 +261,6 @@
         min-height: 0;
     }
 
-    .project-meta {
-        gap: 10px;
-    }
-
     .project-actions {
         align-items: flex-start;
         flex-direction: column;
@@ -312,10 +284,6 @@
 }
 
 @media(max-width:480px) {
-    .project-meta {
-        grid-template-columns: 1fr;
-    }
-
     .stack-inspector {
         grid-template-columns: 1fr
     }
