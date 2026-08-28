@@ -32,7 +32,7 @@ export default function CaseStudy() {
           Bernard K. Mtonga <span>_</span>
         </a>
         <div className="case-study-header-actions">
-          <a className="back-link" href="/">
+          <a className="action-control secondary back-link" href="/">
             ← Portfolio
           </a>
           <ThemeToggle />
@@ -98,6 +98,27 @@ export default function CaseStudy() {
           </div>
         </section>
 
+        <section className="case-study-section process-section">
+          <div className="case-study-label">RESEARCH & CONSTRAINTS</div>
+          <div>
+            <h2>Start with the brief, the user jobs, and the service boundaries.</h2>
+            <div className="process-grid">
+              <article>
+                <small>USER JOBS</small>
+                <p>Find a nearby dealership, understand existing feedback, and share a useful review.</p>
+              </article>
+              <article>
+                <small>CONSTRAINTS</small>
+                <p>Connect relational dealership data, authenticated actions, review storage, and sentiment analysis.</p>
+              </article>
+              <article>
+                <small>DECISION</small>
+                <p>Keep the customer flow simple while separating inventory, reviews, analysis, and deployment concerns.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section className="case-study-section architecture-section">
           <div className="case-study-label">SYSTEM ARCHITECTURE</div>
           <div className="architecture-intro">
@@ -128,6 +149,24 @@ export default function CaseStudy() {
               <li>Django authentication, models, views, and microservice proxy functions</li>
               <li>Node.js and Express REST endpoints backed by MongoDB</li>
               <li>Containerization, automated linting, and Kubernetes deployment workflows</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="case-study-section process-section">
+          <div className="case-study-label">ITERATION & IMPACT</div>
+          <div>
+            <h2>Documented decisions first; measured outcomes next.</h2>
+            <p>
+              The current case study records the intended customer flow and the
+              architecture decisions made to support it. Screenshots, usability
+              findings, deployment details, and quantitative outcomes are still
+              being collected, so no performance impact is claimed yet.
+            </p>
+            <ul className="scope-list">
+              <li>Validate dealership search and review submission with representative users</li>
+              <li>Compare task completion and error rates across the main customer flow</li>
+              <li>Add deployment evidence and measured sentiment-service behavior</li>
             </ul>
           </div>
         </section>

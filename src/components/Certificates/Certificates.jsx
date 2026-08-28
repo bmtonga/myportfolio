@@ -31,7 +31,7 @@ export default function Certificates() {
       <Heading eyebrow="03 / CERTIFICATES">Learning never goes out of style.</Heading>
       <div className="certs">
         {certificates.map((certificate, index) => (
-          <article className="cert" key={certificate.title}>
+          <article className="cert" key={`${certificate.title}-${index}`}>
             <b>0{index + 1}</b>
             <div>
               <small>CERTIFICATE</small>

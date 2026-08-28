@@ -18,15 +18,15 @@
 
 .mail {
     font-size: clamp(16px, 2vw, 26px);
-    display: inline-block;
+    display: inline-flex;
     padding-bottom: 7px;
     border-bottom: 1px solid var(--green);
 }
 
 .mail:hover {
-    color: var(--green);
+    color: var(--primary);
     transform: translateY(-3px);
-    border-bottom-color: var(--text);
+    border-bottom-color: var(--primary);
 }
 
 .bottom {

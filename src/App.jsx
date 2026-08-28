@@ -21,13 +21,12 @@ function App() {
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
+    if (reducedMotion || !window.IntersectionObserver) return undefined;
+
+    document.documentElement.classList.add("js-reveal");
     const sections = document.querySelectorAll(
       "main > section:not(.hero), .contact",
     );
-    if (reducedMotion) {
-      sections.forEach((section) => section.classList.add("is-visible"));
-      return undefined;
-    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -40,7 +39,10 @@ function App() {
       { threshold: 0.14 },
     );
     sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      document.documentElement.classList.remove("js-reveal");
+    };
   }, []);
 
   if (isIbmCaseStudy) {

@@ -21,10 +21,10 @@ export default function About() {
           Kubernetes, and OpenShift.
         </p>
         <div className="links">
-          <a href="#contact">
+          <a className="action-control primary" href="#contact">
             BOOK A CALL <Arrow />
           </a>
-          <a href="#">
+          <a className="action-control secondary" href="#">
             CV COMING SOON <Arrow />
           </a>
         </div>

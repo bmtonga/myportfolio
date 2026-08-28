@@ -31,6 +31,8 @@ const inProgressProject = {
 export default function Projects() {
   const [inspectedProject, setInspectedProject] = useState(null);
   const stackInspectorRef = useRef(null);
+  const closeInspectorRef = useRef(null);
+  const triggerRef = useRef(null);
 
   useEffect(() => {
     if (!inspectedProject || !stackInspectorRef.current) return;
@@ -42,7 +44,27 @@ export default function Projects() {
       behavior: prefersReducedMotion ? "auto" : "smooth",
       block: "center",
     });
+    closeInspectorRef.current?.focus();
   }, [inspectedProject]);
+
+  useEffect(() => {
+    if (!inspectedProject) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setInspectedProject(null);
+        triggerRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [inspectedProject]);
+
+  const closeInspector = () => {
+    setInspectedProject(null);
+    triggerRef.current?.focus();
+  };
 
   return (
     <section id="work">
@@ -69,15 +91,18 @@ export default function Projects() {
             </ul>
             <span className="tags">{featuredProject.tags}</span>
             <a
-              className="case-study-link"
+              className="action-control primary case-study-link"
               href="/case-studies/ibm-car-dealership"
             >
               VIEW CASE STUDY <Arrow />
             </a>
             <button
-              className="inspect-project"
+              className="action-control secondary inspect-project"
               type="button"
-              onClick={() => setInspectedProject(featuredProject)}
+              onClick={(event) => {
+                triggerRef.current = event.currentTarget;
+                setInspectedProject(featuredProject);
+              }}
             >
               EXPLORE THE STACK <Arrow />
             </button>
@@ -94,9 +119,12 @@ export default function Projects() {
         <div className="building-actions">
           <span className="tags">{inProgressProject.tags}</span>
           <button
-            className="inspect-project"
+            className="action-control secondary inspect-project"
             type="button"
-            onClick={() => setInspectedProject(inProgressProject)}
+            onClick={(event) => {
+              triggerRef.current = event.currentTarget;
+              setInspectedProject(inProgressProject);
+            }}
           >
             VIEW THE ROADMAP <Arrow />
           </button>
@@ -107,11 +135,13 @@ export default function Projects() {
         <div
           className="stack-inspector"
           ref={stackInspectorRef}
-          aria-live="polite"
+          role="dialog"
+          aria-modal="false"
+          aria-labelledby="project-trace-title"
         >
           <div>
             <small>PROJECT TRACE / {inspectedProject.name.toUpperCase()}</small>
-            <h3>
+            <h3 id="project-trace-title">
               {inspectedProject === featuredProject
                 ? "From customer experience to cloud deployment."
                 : "A focused build plan."}
@@ -127,8 +157,9 @@ export default function Projects() {
           </div>
           <button
             className="close-inspector"
+            ref={closeInspectorRef}
             type="button"
-            onClick={() => setInspectedProject(null)}
+            onClick={closeInspector}
             aria-label="Close project trace"
           >
             CLOSE ×

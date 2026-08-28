@@ -115,6 +115,7 @@ export default function Header() {
               href={link.href}
               onClick={() => handleNavClick(link.id)}
               className={`nav-link ${isActive ? "active" : ""}`}
+              aria-current={isActive ? "location" : undefined}
               style={{ "--i": index }}
             >
               {link.name}

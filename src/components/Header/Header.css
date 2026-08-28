@@ -25,6 +25,8 @@ header.header {
 /* Hamburger Button */
 .hamburger-btn {
     display: none;
+    width: 44px;
+    height: 44px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -127,6 +129,9 @@ header.header {
 }
 
 .nav-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
     color: var(--text);
     font: 11px var(--mono);
     text-transform: uppercase;
@@ -140,6 +145,7 @@ header.header {
 
 .nav-link.active {
     color: var(--green);
+    border-bottom: 1px solid var(--green);
 }
 
 /* Mobile Responsive Navigation */

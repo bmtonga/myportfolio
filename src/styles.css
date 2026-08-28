@@ -14,9 +14,12 @@
     --subtle: #b8c1b9;
     --faint: #c2cbc3;
     --green: #83e2a0;
+    --primary: #d6a84f;
+    --primary-text: #10130f;
     --portrait-bg: #1e3525;
     --portrait-border: #294734;
     --portrait-text: #0b0f0d;
+    --accent-text: #0b0f0d;
     --header-bg: rgba(11, 15, 13, 0.95);
     --mobile-menu-bg: rgba(11, 15, 13, 0.98);
     --display: 'Space Grotesk', sans-serif;
@@ -29,19 +32,22 @@
    DESIGN TOKENS — LIGHT MODE
    ============================================= */
 [data-theme="light"] {
-    --bg: #e9e9e9;
-    --bg-elevated: #e8ede9;
+    --bg: #f4f6f3;
+    --bg-elevated: #ffffff;
     --bg-card: #eef2ee;
-    --line: #c8d4ca;
+    --line: #b8c7bb;
     --text: #0d1410;
     --muted: #4a5e50;
     --muted-alt: #5a6e60;
     --subtle: #3a4e3f;
     --faint: #2e4234;
-    --green: #1d7a45;
+    --green: #176b3c;
+    --primary: #a87518;
+    --primary-text: #ffffff;
     --portrait-bg: #c8e6d0;
     --portrait-border: #a0c8b0;
     --portrait-text: #0b0f0d;
+    --accent-text: #ffffff;
     --header-bg: rgba(245, 247, 245, 0.95);
     --mobile-menu-bg: rgba(245, 247, 245, 0.98);
 }
@@ -50,18 +56,21 @@
 @media (prefers-color-scheme: light) {
     :root:not([data-theme="dark"]) {
         --bg: #f5f7f5;
-        --bg-elevated: #e8ede9;
+        --bg-elevated: #ffffff;
         --bg-card: #eef2ee;
-        --line: #c8d4ca;
+        --line: #b8c7bb;
         --text: #0d1410;
         --muted: #4a5e50;
         --muted-alt: #5a6e60;
         --subtle: #3a4e3f;
         --faint: #2e4234;
-        --green: #1d7a45;
+        --green: #176b3c;
+        --primary: #a87518;
+        --primary-text: #ffffff;
         --portrait-bg: #c8e6d0;
         --portrait-border: #a0c8b0;
         --portrait-text: #0b0f0d;
+        --accent-text: #ffffff;
         --header-bg: rgba(245, 247, 245, 0.95);
         --mobile-menu-bg: rgba(245, 247, 245, 0.98);
     }
@@ -119,15 +128,15 @@ main {
     margin: auto;
 }
 
-main>section:not(.hero),
-.contact {
+html.js-reveal main>section:not(.hero),
+html.js-reveal .contact {
     opacity: 0;
     transform: translateY(28px);
     transition: opacity .7s cubic-bezier(.2, .8, .2, 1), transform .7s cubic-bezier(.2, .8, .2, 1);
 }
 
-main>section.is-visible,
-.contact.is-visible {
+html.js-reveal main>section.is-visible,
+html.js-reveal .contact.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -139,10 +148,14 @@ main>section.is-visible,
 }
 
 .links a {
+    min-height: 44px;
+    align-items: center;
+    gap: 8px;
     font: 11px var(--mono);
-    padding-bottom: 7px;
+    padding: 0 0 7px;
+    border: 0;
     border-bottom: 1px solid var(--green);
-    display: inline-block;
+    display: inline-flex;
 }
 
 .links a:hover {
@@ -151,8 +164,67 @@ main>section.is-visible,
     border-bottom-color: var(--text);
 }
 
+.action-control {
+    min-height: 44px;
+    align-items: center;
+    gap: 8px;
+    padding: 0 0 7px;
+    border: 0;
+    border-bottom: 1px solid var(--green);
+    color: var(--text);
+    display: inline-flex;
+}
+
+.action-control.primary {
+    border-bottom-color: var(--primary);
+    background: transparent;
+}
+
+.action-control.secondary {
+    border-bottom-color: var(--green);
+}
+
+.action-control:hover {
+    color: var(--green);
+    transform: translateY(-3px);
+}
+
+.action-control.primary:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.action-control.secondary:hover,
+.action-control.secondary:active {
+    border-bottom-color: var(--green);
+}
+
+.action-control.primary:hover,
+.action-control.primary:active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.action-control.secondary:active {
+    color: var(--green);
+}
+
+.action-control.primary .arrow {
+    color: var(--primary);
+}
+
+.action-control.secondary .arrow {
+    color: var(--green);
+}
+
 nav a:hover {
     color: var(--green);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 4px;
 }
 
 .arrow {

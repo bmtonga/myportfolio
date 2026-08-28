@@ -12,7 +12,7 @@ export default function Contact() {
           message.
         </em>
       </h2>
-      <a className="mail" href="mailto:bernard.mtonga@zwacha.co.zm">
+      <a className="action-control primary mail" href="mailto:bernard.mtonga@zwacha.co.zm">
         bernard.mtonga@zwacha.co.zm <Arrow />
       </a>
       <div className="bottom">

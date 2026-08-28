@@ -18,10 +18,10 @@ export default function Hero() {
           education, and development.
         </p>
         <div className="links">
-          <a href="#work">
+          <a className="action-control primary" href="#work">
             VIEW MY WORK <Arrow />
           </a>
-          <a href="#contact">
+          <a className="action-control secondary" href="#contact">
             LET'S TALK <Arrow />
           </a>
         </div>

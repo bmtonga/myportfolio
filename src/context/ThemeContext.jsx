@@ -22,8 +22,18 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     const root = document.documentElement;
     root.setAttribute("data-theme", theme);
-    localStorage.setItem("portfolio-theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    const handleStorage = (event) => {
+      if (event.key === "portfolio-theme") {
+        setTheme(event.newValue === "light" ? "light" : "dark");
+      }
+    };
+
+    window.addEventListener("storage", handleStorage);
+    return () => window.removeEventListener("storage", handleStorage);
+  }, []);
 
   // Listen for OS-level theme changes and update if the user hasn't manually
   // overridden via the toggle
@@ -39,8 +49,11 @@ export function ThemeProvider({ children }) {
     return () => mq.removeEventListener("change", handleChange);
   }, []);
 
-  const toggleTheme = () =>
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    localStorage.setItem("portfolio-theme", nextTheme);
+    setTheme(nextTheme);
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

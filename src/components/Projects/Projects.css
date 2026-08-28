@@ -123,7 +123,7 @@
 }
 
 .case-study-link {
-    display: inline-block;
+    display: inline-flex;
     margin-right: 20px;
     padding-bottom: 7px;
     border-bottom: 1px solid var(--green);
@@ -134,6 +134,11 @@
 .case-study-link:hover {
     color: var(--green);
     transform: translateY(-3px)
+}
+
+.action-control.primary.case-study-link:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
 }
 
 .inspect-project:hover {
