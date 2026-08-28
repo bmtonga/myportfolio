@@ -1,7 +1,10 @@
 .about {
     display: grid;
     grid-template-columns: 1.1fr .9fr;
-    gap: 10vw
+    gap: 10vw;
+    padding-top: clamp(96px, 7vw, 110px);
+    padding-bottom: clamp(96px, 7vw, 110px);
+    padding-inline: 8vw
 }
 
 .about>div:last-child {
@@ -22,6 +25,9 @@
 @media(max-width:760px) {
     .about {
         grid-template-columns: 1fr;
-        gap: 25px
+        gap: 25px;
+        padding-top: 17vw;
+        padding-bottom: 17vw;
+        padding-inline: 6vw
     }
 }

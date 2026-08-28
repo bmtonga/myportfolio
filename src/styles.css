@@ -250,7 +250,7 @@ a:hover .arrow {
     z-index: 1;
 }
 
-section:not(.hero) {
+section:not(.hero):not(.about) {
     border-top: 1px solid var(--line);
     padding: 9vw 8vw;
 }
@@ -277,7 +277,7 @@ section>h2 {
         font-size: clamp(55px, 15vw, 88px)
     }
 
-    section:not(.hero) {
+    section:not(.hero):not(.about) {
         padding: 17vw 6vw
     }
 }
