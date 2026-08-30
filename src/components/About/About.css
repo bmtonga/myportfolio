@@ -1,6 +1,6 @@
 .about {
     display: grid;
-    grid-template-columns: 1.1fr .9fr;
+    grid-template-columns: 1.1fr 1.5fr;
     gap: 10vw;
     padding-top: clamp(96px, 7vw, 110px);
     padding-bottom: clamp(96px, 7vw, 110px);
