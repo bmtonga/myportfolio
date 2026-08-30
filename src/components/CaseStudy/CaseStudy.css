@@ -251,6 +251,62 @@ main.case-study-main > section.case-study-evidence {
     border-bottom: 1px solid var(--line)
 }
 
+.case-study-screens {
+    display: grid;
+    grid-template-columns: minmax(220px, .6fr) minmax(0, 1.4fr);
+    gap: 36px;
+    padding: 9vw 8vw;
+    border-bottom: 1px solid var(--line)
+}
+
+.case-study-screens small {
+    color: var(--green);
+    font: 10px var(--mono);
+    letter-spacing: .04em
+}
+
+.case-study-screens h2 {
+    margin: 18px 0 0;
+    font: 500 clamp(32px, 4vw, 60px)/1 var(--display);
+    letter-spacing: -.07em
+}
+
+.screen-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px
+}
+
+.screen-grid figure {
+    margin: 0;
+    border: 1px solid var(--line);
+    background: var(--bg-card)
+}
+
+.screen-grid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top
+}
+
+.screen-grid figcaption {
+    display: grid;
+    gap: 5px;
+    padding: 15px
+}
+
+.screen-grid strong {
+    font: 500 16px var(--display)
+}
+
+.screen-grid span {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5
+}
+
 .case-study-evidence {
     padding-block: 7vw;
     background: linear-gradient(135deg, rgba(131, 226, 160, .06), transparent 52%)
@@ -305,12 +361,18 @@ main.case-study-main > section.case-study-evidence {
 
     .case-study-hero,
     .case-study-section,
+    .case-study-screens,
     .case-study-evidence {
         padding: 17vw 6vw
     }
 
     .case-study-hero {
         min-height: 0
+    }
+
+    .case-study-screens {
+        grid-template-columns: 1fr;
+        gap: 26px
     }
 
     .case-study-hero h1 {
@@ -327,7 +389,8 @@ main.case-study-main > section.case-study-evidence {
     }
 
     .experience-grid,
-    .architecture-grid {
+    .architecture-grid,
+    .screen-grid {
         grid-template-columns: 1fr
     }
 

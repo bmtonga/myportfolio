@@ -1,5 +1,9 @@
 import "./CaseStudy.css";
 import ThemeToggle from "../ThemeToggle/ThemeToggle.jsx";
+import aboutHeroScreenshot from "../../../Assets/Images/Screenshot 2026-08-16 115232.png";
+import aboutStoryScreenshot from "../../../Assets/Images/Screenshot 2026-08-16 115247.png";
+import teamScreenshot from "../../../Assets/Images/Screenshot 2026-08-16 115300.png";
+import contactScreenshot from "../../../Assets/Images/Screenshot 2026-08-16 115312.png";
 
 const architecture = [
   {
@@ -22,6 +26,13 @@ const architecture = [
     title: "Docker + Kubernetes",
     body: "CI/CD linting, local testing, Docker workflows, and Kubernetes deployment support the complete application stack.",
   },
+];
+
+const projectScreens = [
+  { image: aboutHeroScreenshot, title: "About page", caption: "Branded About page and navigation." },
+  { image: aboutStoryScreenshot, title: "Story and values", caption: "Dealership narrative with mission, vision, and values." },
+  { image: teamScreenshot, title: "Team profiles", caption: "Team presentation for dealership roles." },
+  { image: contactScreenshot, title: "Contact page", caption: "Dealership contact details and customer support channels." },
 ];
 
 export default function CaseStudy() {
@@ -174,13 +185,31 @@ export default function CaseStudy() {
           </div>
         </section>
 
+        <section className="case-study-screens" aria-labelledby="project-screens-title">
+          <div>
+            <small>IMPLEMENTATION SCREENS</small>
+            <h2 id="project-screens-title">Completed customer-facing pages.</h2>
+          </div>
+          <div className="screen-grid">
+            {projectScreens.map((screen) => (
+              <figure key={screen.title}>
+                <img src={screen.image} alt={`${screen.title} in the car dealership portal`} />
+                <figcaption>
+                  <strong>{screen.title}</strong>
+                  <span>{screen.caption}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
         <section className="case-study-evidence">
           <small>PROJECT EVIDENCE</small>
-          <h2>Repository available; deployment evidence coming soon.</h2>
+          <h2>Source code and interface evidence.</h2>
           <p>
-            The source repository provides a verifiable record of the capstone
-            implementation. Deployment screenshots, test output, and measured
-            outcomes will be added as supporting evidence becomes available.
+            These screens document the completed static customer experience.
+            The source repository provides the full implementation record for
+            the capstone application.
           </p>
           <a
             className="action-control primary evidence-link"
