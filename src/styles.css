@@ -16,6 +16,7 @@
     --green: #83e2a0;
     --primary: #c89a45;
     --primary-text: #10130f;
+    --danger: #ef6b6b;
     --portrait-bg: #1e3525;
     --portrait-border: #294734;
     --portrait-text: #0b0f0d;
@@ -44,6 +45,7 @@
     --green: #176b3c;
     --primary: #8e6515;
     --primary-text: #ffffff;
+    --danger: #b3261e;
     --portrait-bg: #c8e6d0;
     --portrait-border: #a0c8b0;
     --portrait-text: #0b0f0d;
@@ -67,6 +69,7 @@
         --green: #176b3c;
         --primary: #8e6515;
         --primary-text: #ffffff;
+        --danger: #b3261e;
         --portrait-bg: #c8e6d0;
         --portrait-border: #a0c8b0;
         --portrait-text: #0b0f0d;
@@ -173,6 +176,12 @@ html.js-reveal .contact.is-visible {
     border-bottom: 1px solid var(--green);
     color: var(--text);
     display: inline-flex;
+}
+
+.action-control:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    transform: none;
 }
 
 .action-control.primary {

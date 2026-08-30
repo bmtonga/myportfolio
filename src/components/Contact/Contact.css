@@ -5,10 +5,21 @@
     border-top: 1px solid var(--line)
 }
 
+.contact-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(340px, 1fr);
+    gap: 10vw;
+    align-items: start
+}
+
+.contact-eyebrow {
+    color: var(--green)
+}
+
 .contact h2 {
-    font: 500 clamp(36px, 5vw, 74px)/1 var(--display);
-    letter-spacing: -.075em;
-    margin: 18px 0 50px
+    font: 500 clamp(34px, 4.2vw, 62px)/1.05 var(--display);
+    letter-spacing: -.06em;
+    margin: 18px 0 30px
 }
 
 .contact h2 em {
@@ -16,11 +27,16 @@
     color: var(--muted)
 }
 
+.contact-alt {
+    color: var(--muted-alt);
+    font: 13px var(--mono)
+}
+
 .mail {
-    font-size: clamp(16px, 2vw, 26px);
     display: inline-flex;
-    padding-bottom: 7px;
+    padding-bottom: 4px;
     border-bottom: 1px solid var(--green);
+    color: var(--text)
 }
 
 .mail:hover {
@@ -29,8 +45,12 @@
     border-bottom-color: var(--primary);
 }
 
+.contact-form {
+    margin-top: 0
+}
+
 .bottom {
-    margin-top: 130px;
+    margin-top: 90px;
     padding-top: 20px;
     border-top: 1px solid var(--line);
     display: flex;
@@ -73,8 +93,13 @@
         padding-inline: 6vw
     }
 
+    .contact-columns {
+        grid-template-columns: 1fr;
+        gap: 40px
+    }
+
     .bottom {
-        margin-top: 80px;
+        margin-top: 60px;
         flex-direction: column;
         align-items: flex-start;
         gap: 16px

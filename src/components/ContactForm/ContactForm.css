@@ -1,0 +1,124 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 640px;
+    margin: 60px 0 0;
+}
+
+.contact-form-eyebrow {
+    color: var(--green);
+    font: 10px var(--mono);
+    letter-spacing: .04em;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.form-field label {
+    color: var(--muted-alt);
+    font: 11px var(--mono);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.form-field .optional {
+    color: var(--muted-alt);
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--text);
+    font: 15px/1.5 'DM Sans', sans-serif;
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-field input:disabled,
+.form-field textarea:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+    border-color: var(--green);
+}
+
+.form-field input[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+    border-color: var(--danger);
+}
+
+.form-error {
+    margin: 0;
+    min-height: 15px;
+    color: var(--danger);
+    font: 11px var(--mono);
+}
+
+.form-success {
+    margin: 0;
+    color: var(--green);
+    font: 11px var(--mono);
+}
+
+/* Off-screen regardless of positioned ancestors; still reachable by screen readers if aria-hidden were removed. */
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.form-status {
+    min-height: 16px;
+}
+
+.form-spinner {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 2px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    vertical-align: -1px;
+    animation: form-spin .6s linear infinite;
+}
+
+@keyframes form-spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@media(max-width:760px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
