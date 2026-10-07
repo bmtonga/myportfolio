@@ -10,11 +10,10 @@ const certificates = [
     credential: 'https://coursera.org/verify/specialization/H9TYB6XOVQD0',
   },
   {
-    title: 'Next Certificate',
-    issuer: 'Issuing organization to be added',
-    date: 'Coming soon',
-    description: 'A new certification will be added here when completed.',
-    credential: null,
+    title: 'Full Stack Software Developer',
+    issuer: 'IBM · Coursera',
+    description: 'IBM Full Stack Software Developer Professional Certificate.',
+    credential: 'https://coursera.org/share/2a2099af4735920b6db3e786cec6d403',
   },
   {
     title: 'Next Certificate',
@@ -40,7 +39,7 @@ export default function Certificates() {
             </div>
             <aside>
               <span>{certificate.issuer}</span>
-              <span>{certificate.date}</span>
+              {certificate.date && <span>{certificate.date}</span>}
               {certificate.credential ? (
                 <a href={certificate.credential} target="_blank" rel="noreferrer">
                   VIEW CERTIFICATE <Arrow />
