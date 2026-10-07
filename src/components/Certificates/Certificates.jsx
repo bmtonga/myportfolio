@@ -3,22 +3,20 @@ import { Arrow, Heading } from "../Shared/Shared.jsx";
 
 const certificates = [
   {
-    title: 'CSS Specialization',
-    issuer: 'Scrimba · Coursera',
-    date: 'May 19, 2026',
-    description: 'Completed seven courses covering HTML and CSS, Flexbox, Grid, variables, responsive design, animations, and Tailwind CSS.',
-    credential: 'https://coursera.org/verify/specialization/H9TYB6XOVQD0',
-  },
-  {
     title: 'Full Stack Software Developer',
     issuer: 'IBM · Coursera',
     description: 'IBM Full Stack Software Developer Professional Certificate.',
     credential: 'https://coursera.org/share/2a2099af4735920b6db3e786cec6d403',
   },
   {
+    title: 'CSS Specialization',
+    issuer: 'Scrimba · Coursera',
+    description: 'Completed seven courses covering HTML and CSS, Flexbox, Grid, variables, responsive design, animations, and Tailwind CSS.',
+    credential: 'https://coursera.org/verify/specialization/H9TYB6XOVQD0',
+  },
+  {
     title: 'Next Certificate',
     issuer: 'Issuing organization to be added',
-    date: 'Coming soon',
     description: 'A new certification will be added here when completed.',
     credential: null,
   },
@@ -39,7 +37,6 @@ export default function Certificates() {
             </div>
             <aside>
               <span>{certificate.issuer}</span>
-              {certificate.date && <span>{certificate.date}</span>}
               {certificate.credential ? (
                 <a href={certificate.credential} target="_blank" rel="noreferrer">
                   VIEW CERTIFICATE <Arrow />
