@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      const basePath = "/myportfolio/";
+      const requestedUrl =
+        window.location.pathname + window.location.search + window.location.hash;
+      window.location.replace(
+        `${basePath}?p=${encodeURIComponent(requestedUrl)}`,
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

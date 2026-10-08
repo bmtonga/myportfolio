@@ -11,9 +11,12 @@ import Contact from "./components/Contact/Contact.jsx";
 import CaseStudy from "./components/CaseStudy/CaseStudy.jsx";
 
 function App() {
+  const basePath = import.meta.env.BASE_URL.replace(/\/+$/, "");
+  const appPath = window.location.pathname.startsWith(`${basePath}/`)
+    ? window.location.pathname.slice(basePath.length)
+    : window.location.pathname;
   const isIbmCaseStudy =
-    window.location.pathname.replace(/\/+$/, "") ===
-    "/case-studies/ibm-car-dealership";
+    appPath.replace(/\/+$/, "") === "/case-studies/ibm-car-dealership";
 
   useEffect(() => {
     if (isIbmCaseStudy) return undefined;

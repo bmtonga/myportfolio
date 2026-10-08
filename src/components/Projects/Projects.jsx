@@ -88,7 +88,7 @@ export default function Projects() {
             <div className="project-actions">
               <a
                 className="action-control primary case-study-link"
-                href="/case-studies/ibm-car-dealership"
+                href={`${import.meta.env.BASE_URL}case-studies/ibm-car-dealership`}
               >
                 VIEW CASE STUDY <Arrow />
               </a>

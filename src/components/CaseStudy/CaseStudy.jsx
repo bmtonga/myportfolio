@@ -39,11 +39,11 @@ export default function CaseStudy() {
   return (
     <div className="case-study-page">
       <header className="case-study-header">
-        <a className="case-study-brand" href="/">
+        <a className="case-study-brand" href={import.meta.env.BASE_URL}>
           Bernard K. Mtonga
         </a>
         <div className="case-study-header-actions">
-          <a className="action-control secondary back-link" href="/">
+          <a className="action-control secondary back-link" href={import.meta.env.BASE_URL}>
             ← Portfolio
           </a>
           <ThemeToggle />
@@ -224,7 +224,7 @@ export default function CaseStudy() {
 
       <footer className="case-study-footer">
         <span>© 2026 BERNARD K. MTONGA</span>
-        <a href="/">BACK TO PORTFOLIO ↑</a>
+        <a href={import.meta.env.BASE_URL}>BACK TO PORTFOLIO ↑</a>
       </footer>
     </div>
   );

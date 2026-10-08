@@ -1,6 +1,7 @@
 import "./Header.css";
 import { useState, useEffect, useRef } from "react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle.jsx";
+import profilePicture from "../../../Assets/Images/profilepicture.webp";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -105,7 +106,7 @@ export default function Header() {
             setPortraitOpen(true);
           }}
         >
-          <img src="/Assets/Images/profilepicture.webp" alt="" aria-hidden="true" />
+          <img src={profilePicture} alt="" aria-hidden="true" />
         </button>
         <a className="logo" href="#top" onClick={() => setActiveSection("")}>
           Bernard K. Mtonga
@@ -176,7 +177,7 @@ export default function Header() {
               </button>
             </div>
             <img
-              src="/Assets/Images/profilepicture.webp"
+              src={profilePicture}
               alt="Portrait of Bernard K. Mtonga"
             />
           </div>
