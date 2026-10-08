@@ -28,6 +28,13 @@ const inProgressProject = {
   ],
 };
 
+const vinjeruScoringApp = {
+  name: "Vinjeru Trust Scoring App",
+  description:
+    "An in-progress scoring app being developed for Vinjeru Trust, my former school.",
+  tags: "Vinjeru Trust • Scoring app • In progress",
+};
+
 export default function Projects() {
   const [inspectedProject, setInspectedProject] = useState(null);
   const stackInspectorRef = useRef(null);
@@ -115,6 +122,17 @@ export default function Projects() {
           >
             VIEW THE ROADMAP <Arrow />
           </button>
+        </div>
+      </div>
+
+      <div className="building-section">
+        <div>
+          <small className="building-status">IN PROGRESS</small>
+          <h3>{vinjeruScoringApp.name}</h3>
+          <p>{vinjeruScoringApp.description}</p>
+        </div>
+        <div className="building-actions">
+          <span className="tags">{vinjeruScoringApp.tags}</span>
         </div>
       </div>
 
