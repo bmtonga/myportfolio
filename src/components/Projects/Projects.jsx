@@ -83,10 +83,6 @@ export default function Projects() {
 
       <div className="projects">
         <article className="project featured-project">
-          <div className="visual capstone-visual" aria-hidden="true">
-            <span>IBM</span>
-            <i>01</i>
-          </div>
           <div className="project-copy">
             <small>FEATURED / IBM CAPSTONE</small>
             <h3>{featuredProject.name}</h3>

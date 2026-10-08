@@ -27,44 +27,11 @@
 }
 
 .featured-project {
-    min-height: 390px;
+    min-height: 0;
     padding: 18px;
     display: grid;
-    grid-template-columns: minmax(220px, .9fr) minmax(0, 1.1fr);
-    gap: clamp(25px, 5vw, 76px);
+    grid-template-columns: minmax(0, 1fr);
     align-items: center
-}
-
-.visual {
-    aspect-ratio: 4 / 3;
-    min-height: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding: 22px;
-    color: var(--green);
-    background: repeating-linear-gradient(135deg, #182a1d 0 1px, transparent 1px 13px), #243d2b;
-    transition: transform .45s cubic-bezier(.2,.8,.2,1), filter .45s ease
-}
-
-.project:hover .visual {
-    transform: scale(.98);
-    filter: saturate(1.18) brightness(1.08)
-}
-
-.capstone-visual {
-    background: radial-gradient(circle at 74% 25%, #83e2a0 0 2%, transparent 2.5%), radial-gradient(circle at 74% 25%, #2e523a 0 19%, transparent 19.5%), repeating-linear-gradient(135deg, #182a1d 0 1px, transparent 1px 13px), #111c14
-}
-
-.capstone-visual span {
-    font: 600 clamp(40px, 7vw, 80px) var(--display);
-    letter-spacing: -.09em
-}
-
-.capstone-visual i {
-    align-self: flex-start;
-    font: 12px var(--mono);
-    font-style: normal
 }
 
 .project h3,
@@ -254,11 +221,6 @@
 
     .featured-project {
         gap: 28px
-    }
-
-    .visual {
-        aspect-ratio: 16 / 9;
-        min-height: 0;
     }
 
     .project-actions {
