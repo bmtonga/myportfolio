@@ -3,9 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bernard Mtonga </title>
-    <script type="module" crossorigin src="/assets/index-BhOFyheQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-B5WbJJMK.css">
+    <meta
+      name="description"
+      content="Portfolio of Bernard K. Mtonga, a full-stack software developer building thoughtful web experiences and applications."
+    />
+    <script>
+      const pagesPath = new URLSearchParams(window.location.search).get("p");
+      if (pagesPath?.startsWith("/myportfolio/")) {
+        window.history.replaceState(null, "", pagesPath);
+      }
+    </script>
+    <title>Bernard K. Mtonga | Full-Stack Software Developer</title>
+    <script type="module" crossorigin src="/myportfolio/assets/index-DTNfjXLp.js"></script>
+    <link rel="stylesheet" crossorigin href="/myportfolio/assets/index-B1qsVia1.css">
   </head>
   <body>
     <div id="root"></div>
