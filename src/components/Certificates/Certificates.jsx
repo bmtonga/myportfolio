@@ -14,12 +14,6 @@ const certificates = [
     description: 'Completed seven courses covering HTML and CSS, Flexbox, Grid, variables, responsive design, animations, and Tailwind CSS.',
     credential: 'https://coursera.org/verify/specialization/H9TYB6XOVQD0',
   },
-  {
-    title: 'Next Certificate',
-    issuer: 'Issuing organization to be added',
-    description: 'A new certification will be added here when completed.',
-    credential: null,
-  },
 ];
 
 export default function Certificates() {
