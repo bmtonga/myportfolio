@@ -1,5 +1,12 @@
 {
-  "scripts": { "dev": "vite", "build": "node ./node_modules/vite/bin/vite.js build" },
-  "dependencies": { "@vitejs/plugin-react": "latest", "vite": "latest", "react": "latest", "react-dom": "latest" },
-  "devDependencies": {}
+  "scripts": {
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "build": "node ./node_modules/vite/bin/vite.js build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.2.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "^7.3.7"
+  }
 }
