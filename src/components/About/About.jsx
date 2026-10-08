@@ -9,16 +9,15 @@ export default function About() {
       </Heading>
       <div>
         <p>
-          I’m a mathematics enthusiast with a strong appreciation for systems
+          I’m an Economics & Mathematics enthusiast with a strong appreciation for systems
           thinking, problem-solving, and collaboration. I enjoy breaking complex
           challenges into clear, practical solutions and working with others to
           turn ideas into useful digital experiences.
         </p>
         <p>
           Outside software development, I enjoy teaching mathematics to
-          high-school students who find the subject challenging. Curiosity
-          drives how I learn, and I’m currently expanding my skills in Docker,
-          Kubernetes, and OpenShift.
+          high-school students who find the subject challenging and playing basketball. Curiosity
+          drives how I learn, and I’m currently taking a course in principles of microeconomics.
         </p>
         <div className="links">
           <a className="action-control primary" href="#contact">

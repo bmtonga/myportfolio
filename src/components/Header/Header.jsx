@@ -1,7 +1,7 @@
 import "./Header.css";
 import { useState, useEffect, useRef } from "react";
 import ThemeToggle from "../ThemeToggle/ThemeToggle.jsx";
-import profilePicture from "../../../Assets/Images/profilepicture.webp";
+import profilePicture from "../../../Assets/Images/Jr. Bernard Portrait_1.png";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
